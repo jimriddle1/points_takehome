@@ -73,8 +73,6 @@ RESPONSE:
 ```
 
 POSTMAN EXAMPLE: 
-![Screen Shot 2022-10-20 at 4 59 30 PM](https://user-images.githubusercontent.com/99755958/197067161-f510312e-d643-4c1b-a470-e6b0b115b151.png)
-
 ![Screen Shot 2022-10-20 at 5 01 39 PM](https://user-images.githubusercontent.com/99755958/197067292-cb1695b9-6c19-4de5-ac0f-9fd16030823b.png)
 
 ---
@@ -121,6 +119,9 @@ RESPONSE:
 }
 ```
 
+POSTMAN EXAMPLE: 
+![Screen Shot 2022-10-20 at 5 03 08 PM](https://user-images.githubusercontent.com/99755958/197067801-9571d2fa-1ddb-43a3-af1a-b9008f2aae05.png)
+
 
 # INDEX
 
@@ -152,6 +153,10 @@ RESPONSE:
 	}
 }
 ```
+
+POSTMAN EXAMPLE: 
+![Screen Shot 2022-10-20 at 5 04 12 PM](https://user-images.githubusercontent.com/99755958/197067871-598edb16-224b-4d0d-85d4-f6fa7092e039.png)
+
 ---
 
 
