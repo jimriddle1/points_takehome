@@ -5,7 +5,6 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def create
-    # binding.pry
     transaction = Transaction.new(payer: transaction_params[:payer],
           points: transaction_params[:points],
           timestamp: transaction_params[:timestamp])
