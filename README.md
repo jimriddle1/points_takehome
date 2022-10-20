@@ -74,6 +74,9 @@ RESPONSE:
 
 POSTMAN EXAMPLE: 
 ![Screen Shot 2022-10-20 at 4 59 30 PM](https://user-images.githubusercontent.com/99755958/197067161-f510312e-d643-4c1b-a470-e6b0b115b151.png)
+
+![Screen Shot 2022-10-20 at 5 01 39 PM](https://user-images.githubusercontent.com/99755958/197067292-cb1695b9-6c19-4de5-ac0f-9fd16030823b.png)
+
 ---
 
 # UPDATE
