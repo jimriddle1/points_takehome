@@ -38,7 +38,7 @@
 	
 
 ``` ruby
-[GET] /api/v1/transactions
+[POST] /api/v1/transactions
 
 ```
 
