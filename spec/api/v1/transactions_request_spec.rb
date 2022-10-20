@@ -36,4 +36,84 @@ RSpec.describe 'Transactions API' do
 
   end
 
+  it 'gives me the current balance' do
+    transaction_params_1 = {
+      payer: 'DANNON',
+      points: 1000,
+      timestamp: "2020-11-02T14:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_1 }, as: :json
+    transaction_params_2 = {
+      payer: 'UNILEVER',
+      points: 200,
+      timestamp: "2020-10-31T11:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_2 }, as: :json
+    transaction_params_3 = {
+      payer: 'DANNON',
+      points: -200,
+      timestamp: "2020-10-31T15:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_3 }, as: :json
+    transaction_params_4 = {
+      payer: 'MILLER COORS',
+      points: 10000,
+      timestamp: "2020-11-01T14:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_4 }, as: :json
+    transaction_params_5 = {
+      payer: 'DANNON',
+      points: 300,
+      timestamp: "2020-10-31T10:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
+
+
+     get '/api/v1/transactions/'
+     expect(response).to be_successful
+     response_body = JSON.parse(response.body, symbolize_names: true)
+
+     expect(response_body[:data][:DANNON]).to eq(1100)
+     expect(response_body[:data][:UNILEVER]).to eq(200)
+     expect(response_body[:data][:"MILLER COORS"]).to eq(10000)
+  end
+
+  xit 'spends points given an amount to spend' do
+    transaction_params_1 = {
+      payer: 'DANNON',
+      points: 1000,
+      timestamp: "2020-11-02T14:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_1 }, as: :json
+    transaction_params_2 = {
+      payer: 'UNILEVER',
+      points: 200,
+      timestamp: "2020-10-31T11:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_2 }, as: :json
+    transaction_params_3 = {
+      payer: 'DANNON',
+      points: -200,
+      timestamp: "2020-10-31T15:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_3 }, as: :json
+    transaction_params_4 = {
+      payer: 'MILLER COORS',
+      points: 10000,
+      timestamp: "2020-11-01T14:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_4 }, as: :json
+    transaction_params_5 = {
+      payer: 'DANNON',
+      points: 300,
+      timestamp: "2020-10-31T10:00:00Z"
+      }
+     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
+
+     spend_point_params = {"points": 5000}
+
+     patch '/api/v1/transactions/spend', params: { spend_point: spend_point_params }, as: :json
+
+  end
+
 end
