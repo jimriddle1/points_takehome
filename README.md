@@ -148,8 +148,8 @@ RESPONSE:
 ```json
 {
 	"data": {
-		"MILLER COORS": 10000,
-		"DANNON": 1000
+		"MILLER COORS": 7800,
+		"DANNON": 0
 	}
 }
 ```
