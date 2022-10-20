@@ -71,6 +71,9 @@ RESPONSE:
 	}
 }
 ```
+
+POSTMAN EXAMPLE: 
+![Screen Shot 2022-10-20 at 4 59 30 PM](https://user-images.githubusercontent.com/99755958/197067161-f510312e-d643-4c1b-a470-e6b0b115b151.png)
 ---
 
 # UPDATE
