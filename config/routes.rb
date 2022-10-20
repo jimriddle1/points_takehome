@@ -7,6 +7,4 @@ Rails.application.routes.draw do
     end
   end
 
-  # get '/api/v1/transactions/spend', to: 'api/v1/transactions#spend'
-
 end

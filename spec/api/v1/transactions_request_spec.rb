@@ -12,12 +12,13 @@ RSpec.describe 'Transactions API' do
      post '/api/v1/transactions', params: { transaction: transaction_params }, as: :json
      expect(response).to be_successful
 
-     created_transaction = Transaction.last
+     response_body = JSON.parse(response.body, symbolize_names: true)
+     attributes = response_body[:data][:attributes]
 
-     expect(created_transaction).to be_a(Transaction)
-     expect(created_transaction.payer).to be_a(String)
-     expect(created_transaction.points).to be_a(Integer)
-     expect(created_transaction.timestamp).to be_a(String)
+     expect(attributes[:payer]).to eq("DANNON")
+     expect(attributes[:points]).to eq(1000)
+     expect(attributes[:timestamp]).to eq("2020-11-02T14:00:00Z")
+
   end
 
   it 'can create a new transaction - sad path' do
@@ -109,9 +110,9 @@ RSpec.describe 'Transactions API' do
       }
     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
 
-     spend_point_params = {"points": 5000}
+     # spend_point_params = {"points": 5000}
 
-     patch '/api/v1/transactions/spend', params: { spend_point: spend_point_params }, as: :json
+     patch '/api/v1/transactions/spend', params: {"points": 5000}, as: :json
 
      expect(response).to be_successful
      response_body = JSON.parse(response.body, symbolize_names: true)
@@ -171,15 +172,12 @@ RSpec.describe 'Transactions API' do
       }
     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
 
-     spend_point_params = {"points": 50000}
-
-     patch '/api/v1/transactions/spend', params: { spend_point: spend_point_params }, as: :json
+     patch '/api/v1/transactions/spend', params: {"points": 50000}, as: :json
 
      expect(response).to_not be_successful
      response_body = JSON.parse(response.body, symbolize_names: true)
 
      expect(response_body[:data][:errors]).to eq("Not enough points available")
-
 
   end
 
