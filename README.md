@@ -116,7 +116,7 @@ RESPONSE:
 ```
 
 
-# VIEW
+# INDEX
 
 
 **Transaction Index**
