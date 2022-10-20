@@ -23,7 +23,7 @@
 # API Usage
 
 - Available Endpoints:
-  - [Create Transaction](#CREATE)
+  - [Create transaction](#CREATE)
   - [Spend points](#UPDATE)
   - [View all transactions](#INDEX)
 
