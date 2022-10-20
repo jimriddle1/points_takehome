@@ -19,7 +19,11 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def update
-    # binding.pry
+    if Transaction.total_points_available < params["spend_point"]["points"]
+      render json: { data: { errors: "Not enough points available"} }, status: 401
+    else
+      render json: { data: Transaction.spend_points(params["spend_point"]["points"]) }
+    end
   end
 
   private
