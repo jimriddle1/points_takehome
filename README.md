@@ -42,7 +42,7 @@
 
 ```
 
- Example:
+ EXAMPLE:
 
 ``` ruby 
 [POST] /api/v1/transactions
@@ -90,7 +90,7 @@ POSTMAN EXAMPLE:
 
 ```
 
- Example:
+ EXAMPLE:
 
 ``` ruby 
 [PATCH] /api/v1/transactions/spend
@@ -136,7 +136,7 @@ POSTMAN EXAMPLE:
 
 ```
 
- Example:
+ EXAMPLE:
 
 ``` ruby 
 [GET]  /api/v1/transactions
