@@ -1,26 +1,29 @@
 class Api::V1::TransactionsController < ApplicationController
 
   def index
-    binding.pry
+    render json: { data: Transaction.points_balance }
   end
 
   def create
     # binding.pry
-    transaction = Transaction.create(payer: transaction_params[:payer],
+    transaction = Transaction.new(payer: transaction_params[:payer],
           points: transaction_params[:points],
           timestamp: transaction_params[:timestamp])
 
     if transaction.save
-      render json: TransactionSerializer.new(Transaction.create(transaction_params)), status: :created
+      render json: TransactionSerializer.new(transaction), status: :created
     else
-      # binding.pry
       render json: { data: { errors: transaction.errors.full_messages} }, status: 401
     end
 
   end
 
-  def spend
-
+  def update
+    if Transaction.total_points_available < params["spend_point"]["points"]
+      render json: { data: { errors: "Not enough points available"} }, status: 401
+    else
+      render json: { data: Transaction.spend_points(params["spend_point"]["points"]) }
+    end
   end
 
   private
