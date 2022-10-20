@@ -18,10 +18,10 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def update
-    if Transaction.total_points_available < params["spend_point"]["points"]
+    if Transaction.total_points_available < params[:points]
       render json: { data: { errors: "Not enough points available"} }, status: 401
     else
-      render json: { data: Transaction.spend_points(params["spend_point"]["points"]) }
+      render json: { data: Transaction.spend_points(params[:points]) }
     end
   end
 

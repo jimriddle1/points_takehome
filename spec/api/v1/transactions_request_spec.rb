@@ -110,9 +110,9 @@ RSpec.describe 'Transactions API' do
       }
     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
 
-     spend_point_params = {"points": 5000}
+     # spend_point_params = {"points": 5000}
 
-     patch '/api/v1/transactions/spend', params: { spend_point: spend_point_params }, as: :json
+     patch '/api/v1/transactions/spend', params: {"points": 5000}, as: :json
 
      expect(response).to be_successful
      response_body = JSON.parse(response.body, symbolize_names: true)
@@ -172,15 +172,12 @@ RSpec.describe 'Transactions API' do
       }
     post '/api/v1/transactions', params: { transaction: transaction_params_5 }, as: :json
 
-     spend_point_params = {"points": 50000}
-
-     patch '/api/v1/transactions/spend', params: { spend_point: spend_point_params }, as: :json
+     patch '/api/v1/transactions/spend', params: {"points": 50000}, as: :json
 
      expect(response).to_not be_successful
      response_body = JSON.parse(response.body, symbolize_names: true)
 
      expect(response_body[:data][:errors]).to eq("Not enough points available")
-
 
   end
 
