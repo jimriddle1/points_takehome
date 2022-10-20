@@ -34,7 +34,7 @@
 
 **Create Transaction**
 
-- This endpoint creates a subscription 
+- This endpoint creates a transaction 
 	
 
 ``` ruby
