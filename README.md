@@ -49,8 +49,8 @@
 
 - Body:
 	  {
-      "payer": "DANNON",
-      "points": 1000,
+      "payer": "MILLER COORS",
+      "points": 10000,
       "timestamp": "2020-11-02T14:00:00Z"
     }
 
@@ -64,8 +64,8 @@ RESPONSE:
 		"id": "1",
 		"type": "transaction",
 		"attributes": {
-			"payer": "DANNON",
-			"points": 1000,
+			"payer": "MILLER COORS",
+			"points": 10000,
 			"timestamp": "2020-11-02T14:00:00Z"
 		}
 	}
@@ -109,11 +109,11 @@ RESPONSE:
 	"data": [
 		{
 			"payer": "MILLER COORS",
-			"points": -2000
+			"points": -2200
 		},
 		{
 			"payer": "DANNON",
-			"points": -1000
+			"points": -800
 		}
 	]
 }
