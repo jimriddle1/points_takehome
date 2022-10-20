@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :transactions, only: [:index, :create]
+      resources :transactions, only: [:index, :create, :update]
     end
   end
 
-  get '/api/v1/transactions/spend', to: 'api/v1/transactions#spend'
+  # get '/api/v1/transactions/spend', to: 'api/v1/transactions#spend'
 
 end
