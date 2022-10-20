@@ -155,6 +155,7 @@ RESPONSE:
 ```
 
 POSTMAN EXAMPLE: 
+
 ![Screen Shot 2022-10-20 at 5 04 12 PM](https://user-images.githubusercontent.com/99755958/197067871-598edb16-224b-4d0d-85d4-f6fa7092e039.png)
 
 ---
